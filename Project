@@ -1,0 +1,20 @@
+Tidal Flood Risk & Infrastructure Vulnerability Engine
+Project Overview & Study Area
+Primary Study Area: Lagos–Calabar Coastal Highway Corridor (Phase 1 focus: Lagos State Atlantic Shoreline through the Niger 
+delta coast
+Area of Interest (AOI): A locked $5\text{ km}$ spatial buffer along the official highway alignment vector (EPSG:32631/ UTM 
+Part 1 — Research Question
+How can an automated geospatial screening engine delineate low-elevation coastal flood risk zones (< 5 metres elevation),
+quantify potential human population displacement, and evaluate economic asset exposure along the l Highway corridor over time?
+Why It Matters
+The 700 km highway intersects fragile estuarine ecosystems, barrier islands, and dense coastal settlements exposed to storm surges
+sea-level rise, and coastal erosion. Civil engineers, disaster management agencies,, and climate adaptation planners require an 
+automated system to:
+       Simulate multi-depth flood scenarios (1m to 5m)
+       Pinpoint high-vulnerability road segments.
+       Target coastal protection investments without relying on manual, non-reproducible desktop GIS tasks.
+DATASETS AND SOURCES 
+Highway Vector Alignment    https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.1
+WorldPop High-Resolution 100m Population Grid (Nigeria)     https://eogdata.mines.edu/products/vnl/
+VIIRS Nighttime Lights (Economic Activity Proxy)      https://www.hydrosheds.org/products/hydrorivers
+HydroRIVERS Hydrographic Vector Network   Hhttps://download.geofabrik.de/africa/nigeria.html
