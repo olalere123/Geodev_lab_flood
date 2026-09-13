@@ -1,0 +1,54 @@
+1. Health Facilities (GRID3, 2024 release)
+Source: GRID3 Health Facilities
+
+Geometry Type: Point
+
+Feature Count: ~40,000+ facilities nationwide (hospitals, clinics, health posts)
+
+Key Columns: facility_name, facility_type, state, lga, source_date
+
+Notes: Some facilities lack complete attribute information (e.g., missing facility type or coordinates). Coverage is strongest in urban areas.
+
+2. Schools (GRID3, Nigeria dataset)
+Source: GRID3 Schools
+
+Geometry Type: Point
+
+Feature Count: ~60,000+ schools nationwide
+
+Key Columns: school_name, education_level (primary/secondary), state, lga
+
+Notes: Attribute completeness varies; some schools have missing names or education levels. Useful for infrastructure exposure analysis.
+
+3. Population (GRID3, 2025 release)
+Source: GRID3 Population
+
+Geometry Type: Raster grid (gridded population estimates)
+
+Feature Count: Not applicable (continuous raster surface)
+
+Key Columns: Pixel values represent estimated population counts per grid cell
+
+Notes: Provides fine‑scale population distribution, useful for overlay with hazard zones. Some rural areas may have modeled estimates rather than survey data.
+
+4. Administrative Boundaries (geoBoundaries ADM2)
+Source: geoBoundaries Nigeria ADM2
+
+Geometry Type: Polygon
+
+Feature Count: 774 features (Local Government Areas)
+
+Key Columns: shapeName, shapeID, shapeType, shapeISO
+
+Notes: Boundaries align with official LGA divisions. Some minor discrepancies may exist compared to national datasets, but widely used for open GIS projects.
+
+5. Transport (OpenStreetMap via QuickOSM)
+Source: OpenStreetMap (queried with QuickOSM in QGIS)
+
+Geometry Type: Line
+
+Feature Count: Depends on query (e.g., "highway" IN ('trunk','primary','secondary'))
+
+Key Columns: highway, name, surface, bridge, tunnel
+
+Notes: OSM coverage is strong in Lagos, but some attributes (like road surface type) may be missing or inconsistent.
