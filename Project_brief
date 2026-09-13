@@ -1,0 +1,32 @@
+# Project Brief: Lagos Coastal Corridor Risk Model
+
+## Project Title
+**Lagos Coastal Corridor: Flood Hazard & Infrastructure Risk Model**
+
+## Study Area
+- **Local Government Areas (LGAs):** Eti-Osa, Ibeju-Lekki, and Epe  
+- **Location:** Lagos State, Nigeria  
+- **Coordinate Reference System (CRS):** EPSG:32631 (WGS 84 / UTM Zone 31N)  
+
+---
+
+## Executive Summary
+The rapid urbanization of Lagos State's eastern coastal axis, accelerated by major infrastructure projects such as the **Lagos–Calabar Coastal Highway**, intersects with severe low‑lying coastal flood hazards.  
+
+This project models spatial exposure by evaluating **low-elevation inundation zones (≤ 5 m above sea level)** against critical social infrastructure (healthcare and educational facilities) and primary transit corridors across Eti-Osa, Ibeju-Lekki, and Epe.
+
+---
+
+## Key Objectives
+
+### 1. Terrain Hazard Modeling
+- Extract bare‑earth digital elevation profiles from high‑resolution DTM data.  
+- Isolate vulnerable coastal plains (≤ 5 m elevation).  
+
+### 2. Asset Exposure Mapping
+- Map and quantify health and educational facilities falling within high‑risk flood zones.  
+- Assess exposure across all three LGAs.  
+
+### 3. Corridor Vulnerability Analysis
+- Evaluate spatial proximity between the proposed coastal highway/bridge alignment and low‑elevation flood hazards.  
+- Support climate‑resilient engineering and disaster response planning.  
