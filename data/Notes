@@ -50,5 +50,38 @@ Geometry Type: Line
 Feature Count: Depends on query (e.g., "highway" IN ('trunk','primary','secondary'))
 
 Key Columns: highway, name, surface, bridge, tunnel
+### 2. Spatial Reference & Coordinate Systems
 
+* **Source Layers CRS:** 
+  `EPSG:4326` (WGS 84 — Geographic Coordinate System)
+* **Target / Projected CRS:** 
+  `EPSG:32631` (WGS 84 / UTM Zone 31N)
+* **Projection Rationale:** 
+  Eliminates angular distortion across coastal Lagos (3.1°E to 4.2°E) for accurate distance and planar surface area calculations.
+
+---
+
+### 3. Data Processing Pipeline
+
+1. **Boundary Extraction**
+   * Filtered Eti-Osa, Ibeju-Lekki, and Epe LGAs from the Nigeria Admin 2 dataset.
+
+2. **Spatial Dissolve**
+   * Merged the 3 individual LGA geometries into a single continuous corridor polygon.
+
+3. **Area Verification**
+   * Executed metric area calculation in UTM Zone 31N:
+     $$\text{Total Area} = \frac{\text{geometry\_area\_m2}}{1,000,000} = 1,835\text{ km}^2$$
+
+4. **Vector Clipping**
+   * Clipped GRID3 health facilities and school point datasets to the dissolved boundary.
+
+5. **Raster Clipping**
+   * Clipped FABDEM elevation raster using the dissolved boundary as a mask layer.
+
+6. **Transparency & Water Handling**
+   * Managed zero-elevation values and water body raster pixels (Lekki Lagoon) to prevent black border artifacts.
+
+7. **Symbology**
+   * Applied singleband pseudocolor elevation styling to highlight coastal lowlands sitting below 5 m elevation.
 Notes: OSM coverage is strong in Lagos, but some attributes (like road surface type) may be missing or inconsistent.
