@@ -1,0 +1,50 @@
+# Month 1 Summary: Lagos Coastal Corridor Flood Hazard Assessment
+
+## 1. Core Question
+To what extent are primary transportation infrastructure and educational facilities across Eti-Osa, Ibeju-Lekki, and Epe LGAs exposed to coastal flood hazards within zones at or below 5 meters elevation?
+
+---
+
+## 2. Spatial Operations Executed & Rationale
+
+* **Raster Polygonization (`Polygonize`):**
+  Converted the clipped FABDEM elevation raster (`EPSG:32631`) into vector polygons to isolate the sub-5 meter hazard area (`DN = 1`). This was necessary to enable vector geoprocessing tools like Intersection, Spatial Join, and Union.
+
+* **Vector Intersection (`Highways_3_lga` $\cap$ `Vector Flood Zone`):**
+  Ran a spatial intersection between the reprojected road network lines and the polygonized `DN = 1` flood hazard layer. This operation was selected because long highways needed to be physically sliced at the exact spatial boundaries of the 5m elevation threshold to compute exact submerged kilometers rather than whole-feature estimates.
+
+* **Secondary Operations:**
+  * **Spatial Join (`Join Attributes by Location`):** Attached LGA administrative names and flood risk status (`DN = 1`) directly to point locations for schools and health facilities.
+  * **Union:** Overlaid individual LGA boundaries with flood zone polygons to compute the total exposed surface area ($1,835\text{ km}^2$ total corridor footprint).
+
+---
+
+## 3. Expected vs. Actual Results
+
+* **Expected:** 
+  A simple, continuous highway layer with clear total distance metrics and straightforward spatial boundaries.
+
+* **Actual Output:** 
+  The intersection operation split long road features into dozens of sliced line segments across the attribute table (yielding individual segment values such as $0.388\text{ km}$). When running statistical field summaries across all intersected `DN = 1` segments, the cumulative inundated highway length totaled **388.8094 km** (`388.8094345550315 km`).
+
+---
+
+## 4. Key Insights & Surprises in the Process
+
+1. **Scale of Infrastructure Exposure:** 
+   The total length of flooded road network (**388.81 km**) is significantly higher than initially anticipated, highlighting extreme vulnerability along the Lekki–Epe Expressway and the Lagos–Calabar Coastal Highway alignments.
+2. **Topographic Extremes:** 
+   Virtually all of Eti-Osa and the coastal strip of Ibeju-Lekki sit below 5 meters elevation, whereas northern Epe accounts for almost all higher ground in the corridor (reaching up to $57.24\text{ m}$).
+3. **Geoprocessing Behavior:** 
+   Discovering that vector intersection breaks continuous linear features into micro-segments, requiring attribute table aggregation (`Dissolve` or `Sum`) to calculate total network impact.
+4. **Raster & Canvas Dynamics:** 
+   Understanding how zero-elevation water bodies (Lekki Lagoon) create transparent or bounding-box artifacts during raster clipping and require explicit transparency (`NoData = 0`) or background styling.
+
+---
+
+## 5. Data Needed for Next Phase
+
+* **Building Footprints:** High-resolution vector structures (e.g., Google Open Buildings / OSM) to estimate exact structural damage risk.
+* **Land Use / Land Cover (LULC):** Detailed satellite-derived classification to distinguish residential, commercial, and wetland loss.
+* **Hydrodynamic / Surge Projections:** Dynamic coastal inundation models (100-year storm surge and sea-level rise scenarios) to move beyond static bathtub elevation masking.
+* **Granular Demographic Grids:** High-resolution population data (GRID3 / WorldPop) to estimate affected population counts in sub-5m hazard zones.
