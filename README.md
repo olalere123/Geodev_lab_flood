@@ -65,3 +65,8 @@ This repository contains the GIS processing workflows, spatial queries, and laye
 ├── maps/                 # High-resolution map exports (PNG/PDF)
 ├── scripts/              # Python / GeoPandas processing scripts
 └── qgis/                 # QGIS project file (.qgz) and custom QML styles
+
+## MONTH 2
+### WEEK 5: PREPARATION OF ENVIRONMENT AND BEGINNER PYTHON FOR QGIS DEVELOPER
+
+- Did setup of python and print ('set up') from both python interface and terminal of python, took screenshot of my work and then uploaded in preparation for week 6. 
