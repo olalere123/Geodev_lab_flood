@@ -66,6 +66,20 @@ This repository contains the GIS processing workflows, spatial queries, and laye
 ├── scripts/              # Python / GeoPandas processing scripts
 └── qgis/                 # QGIS project file (.qgz) and custom QML styles
 
+
+
+# Spatial Screen Project
+
+## Overview
+This project is built with [uv](https://github.com/astral-sh/uv) to ensure reproducibility and easy dependency management.  
+It demonstrates how to organize Python code into a package (`src/spatial_screen`), utility scripts (`scripts/`), and data files (`data/`).
+
+## Setup Log
+- **Week 6**: Set up the project with uv and added `pandas`.
+- Verified installation by running `check.py`, which prints the installed pandas version.
+
+## Project Structure
+
 ## MONTH 2
 ### WEEK 5: PREPARATION OF ENVIRONMENT AND BEGINNER PYTHON FOR QGIS DEVELOPER
 
