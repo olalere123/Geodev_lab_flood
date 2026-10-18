@@ -84,3 +84,27 @@ It demonstrates how to organize Python code into a package (`src/spatial_screen`
 ### WEEK 5: PREPARATION OF ENVIRONMENT AND BEGINNER PYTHON FOR QGIS DEVELOPER
 
 - Did setup of python and print ('set up') from both python interface and terminal of python, took screenshot of my work and then uploaded in preparation for week 6. 
+
+
+Ward Area Analysis
+Overview
+This project analyzes the land areas of different wards and classifies them as large or small based on their size. The dataset was originally provided in hectares and later converted into square kilometers.
+
+Ward Areas (Hectares)
+Agodi → 1240.0 hectares
+Bodija → 810.0 hectares
+Sabo → 570.0 hectares
+Mokola → 930.0 hectares
+
+Classification
+Agodi → Large
+Bodija → Small
+Sabo → Small
+Mokola → Large
+
+Conversion to km²
+Since 1 km² = 100 hectares, the areas were converted:
+Agodi → 12.4 km²
+Bodija → 8.1 km²
+Sabo → 5.7 km²
+Mokola → 9.3 km²
