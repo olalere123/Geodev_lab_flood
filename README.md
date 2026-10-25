@@ -108,3 +108,22 @@ Agodi → 12.4 km²
 Bodija → 8.1 km²
 Sabo → 5.7 km²
 Mokola → 9.3 km²
+
+
+Inspect Data
+This project provides a simple Python utility for inspecting numeric columns in a CSV file.
+
+Features
+Reads a CSV file using csv.DictReader with UTF‑8 BOM handling (encoding="utf-8-sig").
+
+Extracts values from a specified column.
+
+Cleans and converts values to floats.
+
+Computes basic statistics:
+
+Smallest value
+
+Largest value
+
+Count of non‑empty entries
