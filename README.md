@@ -127,3 +127,33 @@ Smallest value
 Largest value
 
 Count of non‑empty entries
+tate Population Summary Tool
+
+This Python program reads population data from a CSV file, cleans and converts numeric values, and generates summary statistics for selected columns.
+
+Features
+Reads data from a CSV file using csv.DictReader
+Removes empty values from selected columns
+Converts data to numeric (float) format
+Calculates:
+Count
+Smallest value
+Largest value
+Average value
+Generates summary reports for one or more columns
+Functions
+read_rows(filename)
+
+Reads a CSV file and returns its contents as a list of dictionaries.
+
+clean_values(rows, column)
+
+Extracts values from a specified column, removes empty entries, and converts the remaining values to floats.
+
+summarize(values)
+
+Calculates basic statistics including count, minimum, maximum, and average.
+
+summarize_all(filename, columns)
+
+Creates a summary report for each specified column and returns the results as a dictionary.
